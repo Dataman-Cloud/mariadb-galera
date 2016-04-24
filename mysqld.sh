@@ -51,7 +51,7 @@ fi
 
 # Start mysqld
 
-exec $MYSQLD $OPT --wsrep_start_position=$wsrep_start_position
+exec $MYSQLD --wsrep-cluster-address=gcomm://$CLUSTER_ADDRESS --wsrep-node-address=$HOST --wsrep_start_position=$wsrep_start_position
 
 # We should never end in here
 
